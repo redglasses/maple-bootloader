@@ -39,15 +39,15 @@ int main() {
   setupCLK();
   setupLED();
   setupUSB();
-  setupBUTTON();
+  //setupBUTTON();
   setupFLASH();
 
   strobePin(LED_BANK,LED,STARTUP_BLINKS,BLINK_FAST);
 
   /* wait for host to upload program or halt bootloader */
   bool no_user_jump =
-      (!checkUserCode(USER_CODE_FLASH) && !checkUserCode(USER_CODE_RAM)) ||
-      readPin(BUTTON_BANK,BUTTON);
+      (!checkUserCode(USER_CODE_FLASH) && !checkUserCode(USER_CODE_RAM))/* ||
+      readPin(BUTTON_BANK,BUTTON)*/;
   int delay_count = 0;
 
   while ((delay_count++ < BOOTLOADER_WAIT) 

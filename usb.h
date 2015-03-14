@@ -30,8 +30,8 @@
 
 /* USB Disc Pin Setup.  On the Mini, USB DISC is PB9 */
 #define USB_DISC_BANK         GPIOB
-#define USB_DISC              9
-#define USB_DISC_CR           GPIO_CRH(USB_DISC_BANK)
+#define USB_DISC              2
+#define USB_DISC_CR           GPIO_CRL(USB_DISC_BANK)
 #define USB_DISC_CR_MASK      0xFFFFFF0F
 #define USB_DISC_CR_OUTPUT_OD 0x00000050
 #define RCC_APB2ENR_USB       0x00000008

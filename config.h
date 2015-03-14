@@ -35,13 +35,12 @@
 
 #include "common.h"
 
-/* On the Mini, LED is PB1 */
-#define LED_BANK         GPIOB
-#define LED              1
-#define LED_BANK_CR      GPIO_CRL(LED_BANK)
-#define LED_CR_MASK      0xFFFFFF0F
-#define LED_CR_MODE      0x00000010
-#define RCC_APB2ENR_LED  0x00000008 /* enable PB */
+#define LED_BANK         GPIOC
+#define LED              13
+#define LED_BANK_CR      GPIO_CRH(LED_BANK)
+#define LED_CR_MASK      0xFF0FFFFF
+#define LED_CR_MODE      0x00100000
+#define RCC_APB2ENR_LED  0x00000010 /* enable PC */
 
 /* Speed controls for strobing the LED pin */
 #define BLINK_FAST 0x50000
